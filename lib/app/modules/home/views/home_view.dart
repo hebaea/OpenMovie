@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:open_movie/colors/app_colors.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -15,7 +16,7 @@ class HomeView extends GetView<HomeController> {
       body: Center(
         child: Text(
           'HomeView is working',
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 20, color: AppColors.primary),
         ),
       ),
     );
