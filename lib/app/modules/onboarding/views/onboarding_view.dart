@@ -29,7 +29,7 @@ class OnboardingView extends GetView<OnboardingController> {
                       topRight: Radius.circular(20))),
               height: 250,
               width: double.infinity,
-              // color: Colors.amber,
+              // add text and button
             ),
           ),
         ],
