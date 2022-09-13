@@ -35,11 +35,11 @@ class OnboardingView extends GetView<OnboardingController> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const SizedBox(height: 37),
-                      const Center(
+                       Center(
                         child: Text(
                           'Keep Trak',
                           style: TextStyle(
-                              color: AppColors.textAppPrimay,
+                              color: AppColors.textPrimay,
                               fontWeight: FontWeight.bold,
                               fontSize: 30),
                         ),

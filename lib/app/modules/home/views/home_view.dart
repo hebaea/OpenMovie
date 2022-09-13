@@ -10,7 +10,19 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HomeView'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Get.isDarkMode
+                    ? Get.changeTheme(ThemeData.light())
+                    : Get.changeTheme(ThemeData.dark());
+              },
+              icon: Icon(Icons.light_sharp))
+        ],
+        title: Text(
+          Get.isDarkMode ? 'dark mode' : 'light mode',
+          style: Theme.of(context).textTheme.headline3,
+        ),
         centerTitle: true,
       ),
       body: Center(
