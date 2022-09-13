@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:open_movie/colors/app_colors.dart';
-
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
   const OnboardingView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +34,7 @@ class OnboardingView extends GetView<OnboardingController> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const SizedBox(height: 37),
-                       Center(
+                      Center(
                         child: Text(
                           'Keep Trak',
                           style: TextStyle(
@@ -61,7 +60,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         height: 50,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: AppColors.buttonPrimary,
+                            backgroundColor: AppColors.buttonPrimary,
                             side: BorderSide(
                               width: 2.0,
                               color: AppColors.buttonPrimaryBorder,
@@ -86,6 +85,47 @@ class OnboardingView extends GetView<OnboardingController> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(25),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.layerOnePrimary.withOpacity(0.8),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+              ),
+              height: 46,
+              width: 240,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 7),
+                    child: Image.asset(
+                      'assets/photos/icons/github.png',
+                      height: 28,
+                      width: 28,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print('Text Clicked');
+                    },
+                    child: Text('@Zeglaty /',
+                        style: TextStyle(
+                            color: AppColors.textWight, fontSize: 16)),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      print('Text Clicked');
+                    },
+                    child: Text(' @Heba Abdo ',
+                        style: TextStyle(
+                            color: AppColors.textWight, fontSize: 16)),
+                  ),
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );
