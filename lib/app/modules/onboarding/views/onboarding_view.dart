@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:open_movie/app/models/OnboardingContent.dart';
+import 'package:open_movie/app/routes/app_pages.dart';
 import 'package:open_movie/colors/app_colors.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
-  const OnboardingView({Key? key}) : super(key: key);
+  // OnboardingContent content;
+  String someText;
+  OnboardingView({required this.someText});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +42,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         child: Text(
                           'Keep Trak',
                           style: TextStyle(
-                              color: AppColors.textPrimay,
+                              color: AppColors.textAppPrimay,
                               fontWeight: FontWeight.bold,
                               fontSize: 30),
                         ),
@@ -60,7 +64,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         height: 50,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.buttonPrimary,
+                            primary: AppColors.buttonPrimary,
                             side: BorderSide(
                               width: 2.0,
                               color: AppColors.buttonPrimaryBorder,
@@ -70,9 +74,11 @@ class OnboardingView extends GetView<OnboardingController> {
                                   BorderRadius.circular(8), // <-- Radius
                             ),
                           ),
-                          onPressed: () {},
-                          child: const Text(
-                            'Next',
+                          onPressed: () {
+                            Get.to(OnboardingView(someText: 'text2'));
+                          },
+                          child: Text(
+                            someText,
                             style: TextStyle(
                               color: AppColors.textWight,
                               fontSize: 16,

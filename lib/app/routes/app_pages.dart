@@ -29,7 +29,9 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ONBOARDING,
-      page: () => const OnboardingView(),
+      page: () => OnboardingView(
+        someText: 'text1',
+      ),
       binding: OnboardingBinding(),
     ),
   ];

@@ -11,7 +11,7 @@ class AppColors {
   static const Color layerOnePrimary = Color(0xff171717);
 
   //Text
-  static const Color textPrimay = Color(0xffF9C22E);
+  static const Color textAppPrimay = Color(0xffF9C22E);
   static const Color textWight = Color(0xffFFFFFF);
   static const Color textLightGray = Color(0xff4E4E4E);
 
