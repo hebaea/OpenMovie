@@ -9,19 +9,19 @@ import '../controllers/onboarding_controller.dart';
 class OnboardingView extends GetView<OnboardingController> {
   List<OnboardingContent> onboardingContents = [
     OnboardingContent(
-        imageName: 'onboarding1',
+        imagePath: 'assets/photos/images/onboarding1.jpg',
         title: 'Keep Trak',
         description:
             'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
         buttonText: 'Next'),
     OnboardingContent(
-        imageName: 'onboarding2',
+        imagePath: 'assets/photos/images/onboarding2.jpg',
         title: 'All New Movies',
         description:
             'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
         buttonText: 'One more'),
     OnboardingContent(
-        imageName: 'onboarding3',
+        imagePath: 'assets/photos/images/onboarding3.jpeg',
         title: 'Enjoy Every Moment',
         description:
             'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
@@ -34,12 +34,14 @@ class OnboardingView extends GetView<OnboardingController> {
     return Scaffold(
       body: Stack(
         children: [
-          Image.asset(
-            'assets/photos/images/onboarding1.jpg',
-            fit: BoxFit.cover,
-            height: double.infinity,
-            width: double.infinity,
-            alignment: Alignment.center,
+          Obx(
+            () => Image.asset(
+              onboardingContents[onboardingContentsIndex.toInt()].imagePath,
+              fit: BoxFit.cover,
+              height: double.infinity,
+              width: double.infinity,
+              alignment: Alignment.center,
+            ),
           ),
           Align(
             alignment: FractionalOffset.bottomCenter,
@@ -52,29 +54,35 @@ class OnboardingView extends GetView<OnboardingController> {
               height: 250,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 63),
+                padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const SizedBox(height: 37),
                       Center(
-                        child: Text(
-                          'Keep Trak',
-                          style: TextStyle(
-                              color: AppColors.textAppPrimay,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30),
+                        child: Obx(
+                          () => Text(
+                            onboardingContents[onboardingContentsIndex.toInt()]
+                                .title,
+                            style: TextStyle(
+                                color: AppColors.textAppPrimay,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 10),
-                      const Center(
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
-                          style: TextStyle(
-                            color: AppColors.textWight,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 16,
+                      Center(
+                        child: Obx(
+                          () => Text(
+                            textAlign: TextAlign.center,
+                            onboardingContents[onboardingContentsIndex.toInt()]
+                                .description,
+                            style: TextStyle(
+                              color: AppColors.textWight,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
@@ -83,7 +91,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         height: 50,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            primary: AppColors.buttonPrimary,
+                            backgroundColor: AppColors.buttonPrimary,
                             side: BorderSide(
                               width: 2.0,
                               color: AppColors.buttonPrimaryBorder,
@@ -94,8 +102,11 @@ class OnboardingView extends GetView<OnboardingController> {
                             ),
                           ),
                           onPressed: () {
-                            onboardingContentsIndex =
-                                onboardingContentsIndex + 1;
+                            if (onboardingContentsIndex <= 2) {
+                              onboardingContentsIndex =
+                                  onboardingContentsIndex + 1;
+                            } else
+                              print('go to home screen');
                           },
                           child: Obx(
                             () => Text(
