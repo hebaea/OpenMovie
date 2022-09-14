@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:open_movie/app/models/OnboardingContent.dart';
 import 'package:open_movie/app/routes/app_pages.dart';
 import 'package:open_movie/colors/app_colors.dart';
+import 'package:open_movie/main.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
-  // OnboardingContent content;
-  String someText;
-  OnboardingView({required this.someText});
+  OnboardingContent content;
+  OnboardingView({required this.content});
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +75,19 @@ class OnboardingView extends GetView<OnboardingController> {
                             ),
                           ),
                           onPressed: () {
-                            Get.to(OnboardingView(someText: 'text2'));
+                            if (onboardingContentsIndex < 2) {
+                              onboardingContentsIndex =
+                                  onboardingContentsIndex + 1;
+                              Get.to(OnboardingView(
+                                  content: onboardingContents[
+                                      onboardingContentsIndex]));
+                            } else {
+                              print('go to movies home page');
+                            }
                           },
                           child: Text(
-                            someText,
+                            onboardingContents[onboardingContentsIndex]
+                                .buttonText,
                             style: TextStyle(
                               color: AppColors.textWight,
                               fontSize: 16,

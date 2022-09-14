@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:open_movie/main.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -30,7 +31,7 @@ class AppPages {
     GetPage(
       name: _Paths.ONBOARDING,
       page: () => OnboardingView(
-        someText: 'text1',
+        content: onboardingContents[onboardingContentsIndex],
       ),
       binding: OnboardingBinding(),
     ),
