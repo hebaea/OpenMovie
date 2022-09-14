@@ -30,9 +30,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ONBOARDING,
-      page: () => OnboardingView(
-        content: onboardingContents[onboardingContentsIndex],
-      ),
+      page: () => OnboardingView(),
       binding: OnboardingBinding(),
     ),
   ];

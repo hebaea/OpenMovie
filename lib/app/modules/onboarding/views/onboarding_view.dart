@@ -7,8 +7,27 @@ import 'package:open_movie/main.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {
-  OnboardingContent content;
-  OnboardingView({required this.content});
+  List<OnboardingContent> onboardingContents = [
+    OnboardingContent(
+        imageName: 'onboarding1',
+        title: 'Keep Trak',
+        description:
+            'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
+        buttonText: 'Next'),
+    OnboardingContent(
+        imageName: 'onboarding2',
+        title: 'All New Movies',
+        description:
+            'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
+        buttonText: 'One more'),
+    OnboardingContent(
+        imageName: 'onboarding3',
+        title: 'Enjoy Every Moment',
+        description:
+            'the marvie move univers is one step away from you, stay tuned and give your apenionstay tuned and.',
+        buttonText: 'Happy to have you'),
+  ];
+  var onboardingContentsIndex = 0.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -75,23 +94,19 @@ class OnboardingView extends GetView<OnboardingController> {
                             ),
                           ),
                           onPressed: () {
-                            if (onboardingContentsIndex < 2) {
-                              onboardingContentsIndex =
-                                  onboardingContentsIndex + 1;
-                              Get.to(OnboardingView(
-                                  content: onboardingContents[
-                                      onboardingContentsIndex]));
-                            } else {
-                              print('go to movies home page');
-                            }
+                            onboardingContentsIndex =
+                                onboardingContentsIndex + 1;
                           },
-                          child: Text(
-                            onboardingContents[onboardingContentsIndex]
-                                .buttonText,
-                            style: TextStyle(
-                              color: AppColors.textWight,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                          child: Obx(
+                            () => Text(
+                              onboardingContents[
+                                      onboardingContentsIndex.toInt()]
+                                  .buttonText,
+                              style: TextStyle(
+                                color: AppColors.textWight,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
