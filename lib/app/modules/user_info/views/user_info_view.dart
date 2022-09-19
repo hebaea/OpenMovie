@@ -7,6 +7,7 @@ import '../controllers/user_info_controller.dart';
 
 class UserInfoView extends GetView<UserInfoController> {
   const UserInfoView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,19 +24,36 @@ class UserInfoView extends GetView<UserInfoController> {
         ),
         backgroundColor: AppColors.background,
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Stack(
               children: [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 60.0,
+                Center(
                   child: CircleAvatar(
-                    backgroundImage:
-                        AssetImage('assets/photos/images/Personal Photo.jpg'),
-                    radius: 50.0,
+                    radius: 57.0,
+                    backgroundColor: AppColors.buttonPrimaryBorder,
+                    child: CircleAvatar(
+                      backgroundImage:
+                          AssetImage('assets/photos/images/Personal Photo.jpg'),
+                      radius: 55.0,
+                    ),
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 40),
+            Text(
+              'what should we call you ?',
+              style: TextStyle(color: AppColors.textWight, fontSize: 16),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'placeholder',
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+                  filled: true,
+                  fillColor: AppColors.layerOnePrimary
+              ),
             )
           ],
         ));
