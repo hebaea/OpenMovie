@@ -107,7 +107,7 @@ class OnboardingView extends GetView<OnboardingController> {
                               onboardingContentsIndex =
                                   onboardingContentsIndex + 1;
                             } else {
-                              Get.toNamed(Routes.HOME);
+                              Get.toNamed(Routes.USER_INFO);
                             }
                           },
                           child: Obx(
