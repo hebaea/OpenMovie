@@ -102,11 +102,13 @@ class OnboardingView extends GetView<OnboardingController> {
                             ),
                           ),
                           onPressed: () {
-                            if (onboardingContentsIndex <= 2) {
+                            if (onboardingContentsIndex <
+                                onboardingContents.length - 1) {
                               onboardingContentsIndex =
                                   onboardingContentsIndex + 1;
-                            } else
-                              print('go to home screen');
+                            } else {
+                              Get.toNamed(Routes.HOME);
+                            }
                           },
                           child: Obx(
                             () => Text(

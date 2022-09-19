@@ -1,11 +1,11 @@
 class OnboardingContent {
-  String imageName;
+  String imagePath;
   String title;
   String description;
   String buttonText;
 
   OnboardingContent(
-      {required this.imageName,
+      {required this.imagePath,
       required this.title,
       required this.description,
       required this.buttonText});
