@@ -23,39 +23,48 @@ class UserInfoView extends GetView<UserInfoController> {
           centerTitle: true,
         ),
         backgroundColor: AppColors.background,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Stack(
-              children: [
-                Center(
-                  child: CircleAvatar(
-                    radius: 57.0,
-                    backgroundColor: AppColors.buttonPrimaryBorder,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  Center(
                     child: CircleAvatar(
-                      backgroundImage:
-                          AssetImage('assets/photos/images/Personal Photo.jpg'),
-                      radius: 55.0,
+                      radius: 57.0,
+                      backgroundColor: AppColors.buttonPrimaryBorder,
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(
+                            'assets/photos/images/Personal Photo.jpg'),
+                        radius: 55.0,
+                      ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 40),
-            Text(
-              'what should we call you ?',
-              style: TextStyle(color: AppColors.textWight, fontSize: 16),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'placeholder',
-                border: OutlineInputBorder(),
-                labelText: 'Password',
-                  filled: true,
-                  fillColor: AppColors.layerOnePrimary
+                ],
               ),
-            )
-          ],
+              SizedBox(height: 40),
+              Text(
+                'what should we call you ?',
+                style: TextStyle(color: AppColors.textWight, fontSize: 16),
+              ),
+              SizedBox(height: 8),
+              Container(
+                height: 41,
+                child: TextField(
+                  decoration: InputDecoration(
+                      hintText: 'placeholder',
+                      hintStyle: TextStyle(color: AppColors.textLightGray),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      labelText: 'Password',
+                      filled: true,
+                      fillColor: AppColors.layerOnePrimary),
+                ),
+              )
+            ],
+          ),
         ));
   }
 }
