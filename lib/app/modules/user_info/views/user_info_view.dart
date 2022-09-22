@@ -104,7 +104,40 @@ class UserInfoView extends GetView<UserInfoController> {
               Text(
                 'this data will only be localy stored on so you can see you name in the photo in the app.',
                 style: TextStyle(color: AppColors.textLightGray),
-              )
+              ),
+              Expanded(
+                child: Container(
+                    // color: Colors.green,
+                    ),
+              ),
+              SizedBox(
+                height: 50,
+                width: MediaQuery.of(context).size.width - 40,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.buttonPrimary,
+                    side: BorderSide(
+                      width: 2.0,
+                      color: AppColors.buttonPrimaryBorder,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8), // <-- Radius
+                    ),
+                  ),
+                  onPressed: () {
+                    // Get.toNamed(Routes.USER_INFO);
+                  },
+                  child: Text(
+                    'Save',
+                    style: TextStyle(
+                      color: AppColors.textWight,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 40),
             ],
           ),
         ));

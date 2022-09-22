@@ -26,3 +26,9 @@ flutter:
     - assets/photos/images/
     - assets/photos/icons/
 
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/Ubuntu-Bold.ttf
+        - asset: assets/fonts/Ubuntu-Medium.ttf
+        - asset: assets/fonts/Ubuntu-Regular.ttf
