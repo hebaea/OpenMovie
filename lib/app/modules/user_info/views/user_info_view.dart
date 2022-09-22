@@ -28,6 +28,9 @@ class UserInfoView extends GetView<UserInfoController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 28,
+              ),
               Stack(
                 children: [
                   Center(
@@ -52,16 +55,55 @@ class UserInfoView extends GetView<UserInfoController> {
               Container(
                 height: 41,
                 child: TextField(
+                  cursorColor: Colors.white,
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       hintText: 'placeholder',
                       hintStyle: TextStyle(color: AppColors.textLightGray),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
+                        ),
                       ),
-                      labelText: 'Password',
                       filled: true,
                       fillColor: AppColors.layerOnePrimary),
                 ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                'what is your best jenra',
+                style: TextStyle(color: AppColors.textWight, fontSize: 16),
+              ),
+              SizedBox(height: 8),
+              Container(
+                height: 41,
+                child: TextField(
+                  cursorColor: Colors.white,
+                  style: TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                      hintText: 'placeholder',
+                      hintStyle: TextStyle(color: AppColors.textLightGray),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          width: 0,
+                          style: BorderStyle.none,
+                        ),
+                      ),
+                      filled: true,
+                      fillColor: AppColors.layerOnePrimary),
+                ),
+              ),
+              SizedBox(
+                height: 8,
+              ),
+              Text(
+                'this data will only be localy stored on so you can see you name in the photo in the app.',
+                style: TextStyle(color: AppColors.textLightGray),
               )
             ],
           ),
