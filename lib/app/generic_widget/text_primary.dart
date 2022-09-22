@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:open_movie/colors/app_colors.dart';
 
 class TextPrimary extends StatelessWidget {
+  String text;
+  Color color;
+  double fontSize;
+  FontWeight fontWeight;
+  TextAlign align;
 
-String text;
- Color color;
-
+  TextPrimary({
+    required this.text,
+    this.color = AppColors.textWight,
+    this.fontSize = 16,
+    this.fontWeight = FontWeight.normal,
+    this.align = TextAlign.start,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      'text',
+      text,
       style: TextStyle(
-          color: Colors.white,
+          color: color,
           fontFamily: 'Ubuntu',
-          fontSize: 16,
-          fontWeight: FontWeight.normal,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
           height: 1),
-      textAlign: TextAlign.start,
+      textAlign: align,
     );
   }
 }
