@@ -17,7 +17,7 @@ class AppColors {
 
   //Buttons
   static const Color buttonPrimary = Color(0xffF9C22E);
-  static Color buttonPrimaryBorder = Color(0xff44391C);
+  static const Color buttonPrimaryBorder = Color(0xff44391C);
 
   // bool isDarkMode() {
   //   // mode
