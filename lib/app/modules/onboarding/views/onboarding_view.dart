@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:open_movie/app/generic_widget/button_primary.dart';
+import 'package:open_movie/app/generic_widget/text_primary.dart';
 import 'package:open_movie/app/models/OnboardingContent.dart';
 import 'package:open_movie/app/routes/app_pages.dart';
 import 'package:open_movie/colors/app_colors.dart';
@@ -61,69 +63,43 @@ class OnboardingView extends GetView<OnboardingController> {
                       const SizedBox(height: 37),
                       Center(
                         child: Obx(
-                          () => Text(
-                            onboardingContents[onboardingContentsIndex.toInt()]
+                          () => TextPrimary(
+                            text: onboardingContents[
+                                    onboardingContentsIndex.toInt()]
                                 .title,
-                            style: TextStyle(
-                                color: AppColors.textAppPrimay,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 30),
+                            color: AppColors.textAppPrimay,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                       const SizedBox(height: 10),
                       Center(
                         child: Obx(
-                          () => Text(
-                            textAlign: TextAlign.center,
-                            onboardingContents[onboardingContentsIndex.toInt()]
+                          () => TextPrimary(
+                            text: onboardingContents[
+                                    onboardingContentsIndex.toInt()]
                                 .description,
-                            style: TextStyle(
-                              color: AppColors.textWight,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 16,
-                            ),
+                            align: TextAlign.center,
                           ),
                         ),
                       ),
                       const SizedBox(height: 21),
-                      SizedBox(
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.buttonPrimary,
-                            side: BorderSide(
-                              width: 2.0,
-                              color: AppColors.buttonPrimaryBorder,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(8), // <-- Radius
-                            ),
-                          ),
-                          onPressed: () {
-                            if (onboardingContentsIndex <
-                                onboardingContents.length - 1) {
-                              onboardingContentsIndex =
-                                  onboardingContentsIndex + 1;
-                            } else {
-                              Get.toNamed(Routes.USER_INFO);
-                            }
-                          },
-                          child: Obx(
-                            () => Text(
-                              onboardingContents[
-                                      onboardingContentsIndex.toInt()]
-                                  .buttonText,
-                              style: TextStyle(
-                                color: AppColors.textWight,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
+                      Obx(
+                        () => ButtonPrimary(
+                            title: onboardingContents[
+                                    onboardingContentsIndex.toInt()]
+                                .buttonText,
+                            onClick: () {
+                              if (onboardingContentsIndex <
+                                  onboardingContents.length - 1) {
+                                onboardingContentsIndex =
+                                    onboardingContentsIndex + 1;
+                              } else {
+                                Get.toNamed(Routes.USER_INFO);
+                              }
+                            }),
+                      ),
                     ]),
               ),
             ),
@@ -153,17 +129,13 @@ class OnboardingView extends GetView<OnboardingController> {
                     onTap: () {
                       print('Text Clicked');
                     },
-                    child: Text('@Zeglaty /',
-                        style: TextStyle(
-                            color: AppColors.textWight, fontSize: 16)),
+                    child: TextPrimary(text: '@Zeglaty /'),
                   ),
                   GestureDetector(
                     onTap: () {
                       print('Text Clicked');
                     },
-                    child: Text(' @Heba Abdo ',
-                        style: TextStyle(
-                            color: AppColors.textWight, fontSize: 16)),
+                    child: TextPrimary(text: ' @Heba Abdo '),
                   ),
                 ],
               ),
