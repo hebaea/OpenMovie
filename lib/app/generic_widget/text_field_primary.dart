@@ -3,16 +3,16 @@ import 'package:open_movie/colors/app_colors.dart';
 
 class TextFieldPrimay extends StatelessWidget {
   String hintText;
-  TextInputType keyboardType;
-  Color? backgroundColor;
-  Color? textColor;
-  Color? hintColor;
-  double? fontSize;
-  double? height;
+  TextInputType? keyboardType;
+  Color backgroundColor;
+  Color textColor;
+  Color hintColor;
+  double fontSize;
+  double height;
 
   TextFieldPrimay(
       {required this.hintText,
-      required this.keyboardType,
+      this.keyboardType,
       this.backgroundColor = AppColors.layerOnePrimary,
       this.fontSize = 16,
       this.height = 42,
