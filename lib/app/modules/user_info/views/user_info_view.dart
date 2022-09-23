@@ -29,9 +29,7 @@ class UserInfoView extends GetView<UserInfoController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 28,
-              ),
+              SizedBox(height: 28),
               Stack(
                 children: [
                   Center(
@@ -42,6 +40,17 @@ class UserInfoView extends GetView<UserInfoController> {
                         backgroundImage: AssetImage(
                             'assets/photos/images/Personal Photo.jpg'),
                         radius: 55.0,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 77,
+                    right: 130,
+                    child: Center(
+                      child: IconButton(
+                        color: Colors.red,
+                        icon: Image.asset('assets/photos/icons/plus_icon.png'),
+                        onPressed: () {},
                       ),
                     ),
                   ),
