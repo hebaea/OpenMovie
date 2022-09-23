@@ -79,25 +79,7 @@ class UserInfoView extends GetView<UserInfoController> {
                 style: TextStyle(color: AppColors.textWight, fontSize: 16),
               ),
               SizedBox(height: 8),
-              Container(
-                height: 41,
-                child: TextField(
-                  cursorColor: Colors.white,
-                  style: TextStyle(color: Colors.white),
-                  decoration: InputDecoration(
-                      hintText: 'placeholder',
-                      hintStyle: TextStyle(color: AppColors.textLightGray),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          width: 0,
-                          style: BorderStyle.none,
-                        ),
-                      ),
-                      filled: true,
-                      fillColor: AppColors.layerOnePrimary),
-                ),
-              ),
+             //text field
               SizedBox(
                 height: 8,
               ),
