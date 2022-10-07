@@ -9,6 +9,7 @@ class DiscoverView extends GetView<DiscoverController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         title: TextPrimary(
           text: 'Discover',
@@ -20,24 +21,29 @@ class DiscoverView extends GetView<DiscoverController> {
         backgroundColor: AppColors.background,
       ),
       body: Column(
+
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextFieldPrimay(
-            suffixIcon: Icons.search,
-            hintText: 'Search for the movie you want ...',
+          Container(
+            color: AppColors.background,
+            height: 65,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: 12, bottom: 12, right: 16, left: 16),
+              child: SizedBox(
+                child: TextFieldPrimay(
+                  suffixIcon: Icons.search,
+                  hintText: 'Search for the movie you want ...',
+                ),
+                height: 41,
+              ),
+            ),
+          ),
+
+          Divider(
+            height: 2,
+            color: AppColors.layerOnePrimary,
           )
-          // Container(
-          //   color: AppColors.background,
-          //   height: 65,
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(
-          //         top: 12, bottom: 12, right: 16, left: 16),
-          //     child: Container(
-          //       color: AppColors.layerOnePrimary,
-          //       height: 41,
-          //     ),
-          //   ),
-          // )
         ],
       ),
     );
