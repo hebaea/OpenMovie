@@ -9,17 +9,18 @@ class TextFieldPrimay extends StatelessWidget {
   Color hintColor;
   double fontSize;
   double height;
-  IconData prefixIcon;
+  IconData? prefixIcon;
 
-  TextFieldPrimay(
-      {required this.hintText,
-      this.keyboardType,
-      this.backgroundColor = AppColors.layerOnePrimary,
-      this.fontSize = 16,
-      this.height = 42,
-      this.hintColor = AppColors.textLightGray,
-      this.textColor = Colors.white,
-      this.prefixIcon = Icon(Icons.search)});
+  TextFieldPrimay({
+    required this.hintText,
+    this.keyboardType,
+    this.backgroundColor = AppColors.layerOnePrimary,
+    this.fontSize = 16,
+    this.height = 42,
+    this.hintColor = AppColors.textLightGray,
+    this.textColor = Colors.white,
+    this.prefixIcon,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class TextFieldPrimay extends StatelessWidget {
         style: TextStyle(
             color: textColor, fontFamily: 'Ubuntu', fontSize: fontSize),
         decoration: InputDecoration(
-            prefixIcon: prefixIcon,
+            prefixIcon: (prefixIcon != null) ? Icon(prefixIcon) : null,
             hintText: hintText,
             hintStyle: TextStyle(
                 color: hintColor, fontFamily: 'Ubuntu', fontSize: fontSize),
