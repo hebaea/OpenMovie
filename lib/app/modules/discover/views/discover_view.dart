@@ -23,9 +23,9 @@ class DiscoverView extends GetView<DiscoverController> {
             label: 'School',
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: controller.selectedIndex.toInt(),
         selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+        onTap: controller.onItemTapped,
       ),
       appBar: AppBar(
         title: Text('DiscoverView'),
