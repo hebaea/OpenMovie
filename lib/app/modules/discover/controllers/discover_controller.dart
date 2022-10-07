@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 class DiscoverController extends GetxController {
   //TODO: Implement DiscoverController
 
-  var selectedIndex = 0.obs;
+  var selectedIndex = 1.obs;
 
   void onItemTapped(int index) {
+    print('index = ' + index.toString());
     selectedIndex.value = index;
   }
 

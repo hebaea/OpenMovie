@@ -41,26 +41,11 @@ class DiscoverView extends GetView<DiscoverController> {
         title: Text('DiscoverView'),
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: IndexedStack(
-          index: controller.selectedIndex.value,
-          children: [
-            Text(
-              'Index 0: Home',
-            ),
-            Text(
-              'Index 1: Business',
-            ),
-          ],
+      body: Obx(
+        () => Center(
+          //_widgetOptions.elementAt(_selectedIndex),
+          child: _widgetOptions.elementAt(controller.selectedIndex.value),
         ),
-        // Center(
-        //   //_widgetOptions.elementAt(_selectedIndex),
-        //   child: _widgetOptions.elementAt(controller.selectedIndex.value),
-        //   // child: Text(
-        //   //   'DiscoverView is working',
-        //   //   style: TextStyle(fontSize: 20),
-        //   // ),
-        // ),
       ),
     );
   }
