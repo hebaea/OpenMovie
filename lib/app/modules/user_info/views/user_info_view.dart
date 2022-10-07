@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:open_movie/app/generic_widget/button_primary.dart';
 import 'package:open_movie/app/generic_widget/text_field_primary.dart';
 import 'package:open_movie/app/generic_widget/text_primary.dart';
+import 'package:open_movie/app/routes/app_pages.dart';
 import 'package:open_movie/colors/app_colors.dart';
 
 import '../controllers/user_info_controller.dart';
@@ -96,7 +97,9 @@ class UserInfoView extends GetView<UserInfoController> {
               ButtonPrimary(
                 width: MediaQuery.of(context).size.width - 40,
                 title: 'Save',
-                onClick: () {},
+                onClick: () {
+                  Get.toNamed(Routes.DISCOVER);
+                },
               ),
               const SizedBox(height: 40),
             ],

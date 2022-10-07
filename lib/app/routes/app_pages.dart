@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 
 import '../../main.dart';
+import '../modules/discover/bindings/discover_binding.dart';
+import '../modules/discover/views/discover_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
@@ -39,6 +41,11 @@ class AppPages {
       name: _Paths.USER_INFO,
       page: () => const UserInfoView(),
       binding: UserInfoBinding(),
+    ),
+    GetPage(
+      name: _Paths.DISCOVER,
+      page: () => DiscoverView(),
+      binding: DiscoverBinding(),
     ),
   ];
 }
