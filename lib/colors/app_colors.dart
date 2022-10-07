@@ -5,6 +5,7 @@ class AppColors {
   //General
   static const Color primary = Color(0xffF9C22E);
   static Color primary20 = Color(0xff44391C);
+  static const bottomBarUnselectedTab = Color(0xff818283);
 
   //Layers
   static const Color background = Color(0xff0B0B0B);

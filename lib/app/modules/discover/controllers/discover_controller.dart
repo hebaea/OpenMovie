@@ -5,7 +5,7 @@ class DiscoverController extends GetxController {
 
   var selectedIndex = 0.obs;
 
-  void onItemTapped(var index) {
+  void onItemTapped(int index) {
     selectedIndex.value = index;
   }
 
