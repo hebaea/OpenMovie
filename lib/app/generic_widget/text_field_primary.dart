@@ -32,7 +32,9 @@ class TextFieldPrimay extends StatelessWidget {
         style: TextStyle(
             color: textColor, fontFamily: 'Ubuntu', fontSize: fontSize),
         decoration: InputDecoration(
-            suffixIcon: (suffixIcon != null) ? Icon(suffixIcon) : null,
+            suffixIcon: (suffixIcon != null)
+                ? Icon(suffixIcon, color: AppColors.primary)
+                : null,
             hintText: hintText,
             hintStyle: TextStyle(
                 color: hintColor, fontFamily: 'Ubuntu', fontSize: fontSize),
