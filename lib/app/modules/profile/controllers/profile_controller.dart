@@ -1,8 +1,9 @@
 import 'package:get/get.dart';
 
-class DiscoverController extends GetxController {
-  //TODO: Implement DiscoverController
+class ProfileController extends GetxController {
+  //TODO: Implement ProfileController
 
+  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -15,4 +16,5 @@ class DiscoverController extends GetxController {
 
   @override
   void onClose() {}
+  void increment() => count.value++;
 }
