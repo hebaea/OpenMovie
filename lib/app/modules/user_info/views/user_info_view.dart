@@ -98,7 +98,7 @@ class UserInfoView extends GetView<UserInfoController> {
                 width: MediaQuery.of(context).size.width - 40,
                 title: 'Save',
                 onClick: () {
-                  Get.toNamed(Routes.DISCOVER);
+                  Get.offAllNamed(Routes.MAIN_FEED_NAVIGATION_BAR);
                 },
               ),
               const SizedBox(height: 40),

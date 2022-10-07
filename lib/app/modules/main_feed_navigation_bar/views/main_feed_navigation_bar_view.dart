@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:open_movie/app/modules/discover/views/discover_view.dart';
 import 'package:open_movie/colors/app_colors.dart';
 import '../controllers/main_feed_navigation_bar_controller.dart';
 
 class MainFeedNavigationBarView
     extends GetView<MainFeedNavigationBarController> {
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-    ),
+  static List<Widget> _widgetOptions = <Widget>[
+    DiscoverView(),
     Text(
       'Index 1: Business',
     ),
@@ -35,10 +34,6 @@ class MainFeedNavigationBarView
           unselectedItemColor: AppColors.bottomBarUnselectedTab,
           onTap: controller.onItemTapped,
         ),
-      ),
-      appBar: AppBar(
-        title: Text('DiscoverView'),
-        centerTitle: true,
       ),
       body: Obx(
         () => Center(
