@@ -23,6 +23,7 @@ class DiscoverView extends GetView<DiscoverController> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           TextFieldPrimay(
+            suffixIcon: Icons.search,
             hintText: 'Search for the movie you want ...',
           )
           // Container(

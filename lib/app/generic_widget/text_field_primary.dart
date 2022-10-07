@@ -9,7 +9,7 @@ class TextFieldPrimay extends StatelessWidget {
   Color hintColor;
   double fontSize;
   double height;
-  IconData? prefixIcon;
+  IconData? suffixIcon;
 
   TextFieldPrimay({
     required this.hintText,
@@ -19,7 +19,7 @@ class TextFieldPrimay extends StatelessWidget {
     this.height = 42,
     this.hintColor = AppColors.textLightGray,
     this.textColor = Colors.white,
-    this.prefixIcon,
+    this.suffixIcon,
   });
 
   @override
@@ -32,7 +32,7 @@ class TextFieldPrimay extends StatelessWidget {
         style: TextStyle(
             color: textColor, fontFamily: 'Ubuntu', fontSize: fontSize),
         decoration: InputDecoration(
-            prefixIcon: (prefixIcon != null) ? Icon(prefixIcon) : null,
+            suffixIcon: (suffixIcon != null) ? Icon(suffixIcon) : null,
             hintText: hintText,
             hintStyle: TextStyle(
                 color: hintColor, fontFamily: 'Ubuntu', fontSize: fontSize),
